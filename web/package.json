@@ -1,0 +1,19 @@
+{
+  "private": false,
+  "version": "0.1.0",
+  "name": "print-stats-web",
+  "description": "Simple Next.js app to print Google Analytics reports for your site/app.",
+  "repository": "https://github.com/byurhanbeyzat/print-stats.git",
+  "author": "Byurhan Beyzat <byurhanbeyzat@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "9.1.6",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
+  }
+}
