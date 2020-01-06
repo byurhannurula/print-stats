@@ -14,8 +14,20 @@ const port = process.env.PORT || 4000;
 
 app.use(cors());
 
-app.get('/', async (req, res) => {
-  await getData();
+app.get('/api', async (req, res) => {
+  const { metric } = req.query;
+  const metrics = metric.split(', ');
+
+  Promise.all(getData(metrics))
+    .then(data => {
+      res.send({ data });
+      console.log('Done');
+    })
+    .catch(err => {
+      console.log(`Error: ${err}`);
+      res.send({ status: 'Error getting a metric', message: `${err}` });
+      console.log('Done');
+    });
 });
 
 app.listen(port, () => {
