@@ -20,7 +20,13 @@ app.get('/api', async (req, res) => {
 
   Promise.all(getData(metrics))
     .then(data => {
-      res.send({ data });
+      const body = {};
+      Object.values(data).forEach(value => {
+        Object.keys(value).forEach(key => {
+          body[key] = value[key];
+        });
+      });
+      res.send(body);
       console.log('Done');
     })
     .catch(err => {
