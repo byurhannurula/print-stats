@@ -56,7 +56,7 @@ const countryQuery = {
   dimensions: [{ name: `ga:country` }],
   orderBys: [
     {
-      fieldName: `ga:country`,
+      fieldName: `ga:users`,
       sortOrder: 'DESCENDING',
     },
   ],
